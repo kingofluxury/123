@@ -29,9 +29,22 @@ $files = [ordered]@{
     "rmvpe.onnx"            = "$base/rmvpe.onnx?download=true"
     "$Voice.onnx"           = "$base/$Voice.onnx?download=true"
 }
+$minMb = @{
+    "vec-768-layer-12.onnx" = 300
+    "rmvpe.onnx"            = 300
+    "$Voice.onnx"           = 80
+}
 
 foreach ($name in $files.Keys) {
     $target = Join-Path $OutDir $name
+    if (Test-Path $target) {
+        $existingMb = (Get-Item $target).Length / 1MB
+        if ($existingMb -ge $minMb[$name]) {
+            Write-Host ("已存在，跳过 {0}（{1:N1} MB）" -f $name, $existingMb)
+            continue
+        }
+        Remove-Item $target -Force
+    }
     Write-Host "下载 $name ..."
     & curl.exe -L --retry 10 --retry-delay 3 -C - -o "$target" $files[$name]
     if ($LASTEXITCODE -ne 0) {

@@ -4,6 +4,7 @@ Android 端实时音色转换（Voice Conversion）框架：麦克风 → 端侧
 
 - 详细需求：[REQUIREMENTS.md](REQUIREMENTS.md)
 - 架构与取舍：[DESIGN.md](DESIGN.md)
+- 换电脑 / 从零复现：[REPRODUCE.md](REPRODUCE.md)
 
 ## 安装包
 
@@ -59,14 +60,25 @@ core/vc              VoiceConverter、RvcEngine、模型清单、实时管线
 
 环境：
 
-- Android Studio Ladybug 或更新（或 JDK 17 + Android SDK 35 + Gradle 8.9+）
+- Android Studio Ladybug 或更新（或 JDK 17 + Android SDK 35）
+- 仓库已带 Gradle Wrapper 8.14.3，不需要本机预装 Gradle
 - 手机：arm64-v8a，Android 8.0+，RVC 建议 8 GB 内存
+
+Windows 一键构建（自动找 JDK、生成 `local.properties`）：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\tools\build-apk.ps1
+# Release
+powershell -ExecutionPolicy Bypass -File .\tools\build-apk.ps1 -Release
+```
+
+或直接用 Wrapper：
 
 ```bash
 ./gradlew :app:assembleDebug
 ```
 
-> 本仓库当前没有 `gradlew`，用 Android Studio 打开根目录会自动同步；也可以在装了 Gradle 的机器上执行 `gradle wrapper` 生成。
+> 换电脑 / 缺失项清单见 [REPRODUCE.md](REPRODUCE.md)。
 
 首次运行：
 

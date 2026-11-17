@@ -21,7 +21,8 @@ build/
 app/src/main/assets/models/*/*.onnx
 app/src/main/assets/models/*/*.bin
 app/src/main/assets/models/*/*.data
-dist/public-model/
+dist/public-model*/
+dist/*.zip
 *.onnx
 *.pth
 
