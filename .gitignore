@@ -1,0 +1,31 @@
+*.iml
+.gradle/
+local.properties
+.idea/
+.DS_Store
+build/
+captures/
+.externalNativeBuild
+.cxx
+*.apk
+*.aab
+*.log
+!dist/*.apk
+
+# 构建缓存
+.kotlin/
+.gradle/
+build/
+
+# 模型权重不入库，按需放入 assets/models/<id>/
+app/src/main/assets/models/*/*.onnx
+app/src/main/assets/models/*/*.bin
+app/src/main/assets/models/*/*.data
+dist/public-model/
+*.onnx
+*.pth
+
+# 本地签名材料
+keystore.properties
+keystore/
+*.jks

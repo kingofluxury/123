@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VoiceSim</string>
+    <string name="notification_channel_name">变声服务</string>
+    <string name="notification_title">VoiceSim 正在运行</string>
+    <string name="notification_text">麦克风采集与实时音色转换已开启</string>
+</resources>

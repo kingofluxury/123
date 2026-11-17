@@ -1,0 +1,18 @@
+{
+  "id": "public-demo",
+  "name": "公开示例（woman_1）",
+  "description": "ContentVec + RMVPE + 合并 RVC ONNX，用于链路验证",
+  "version": "2.0",
+  "sample_rate": 40000,
+  "segment_frames": 64,
+  "f0": true,
+  "speaker_id": 0,
+  "mode": "combined",
+  "files": {
+    "hubert": "vec-768-layer-12.onnx",
+    "rmvpe": "rmvpe.onnx"
+  },
+  "combined": "woman_1.onnx",
+  "license": "模型仓库标注 MIT；声音权利未确认，仅供本地测试",
+  "source": "https://huggingface.co/ozada/onnx_rvc"
+}
